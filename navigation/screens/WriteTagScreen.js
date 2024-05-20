@@ -45,13 +45,10 @@ export default function WriteTagScreen({navigation}) {
 
   useFocusEffect(
     React.useCallback(() => {
-      // Reset state khi màn hình được focus
       setTextToWrite('');
       setMessage('');
 
-      return () => {
-        // Any cleanup actions when leaving the screen
-      };
+      return () => {};
     }, []),
   );
 

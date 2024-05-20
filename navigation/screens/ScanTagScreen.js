@@ -79,9 +79,12 @@ export default function ScanTagScreen({navigation}) {
   useFocusEffect(
     React.useCallback(() => {
       setIsReadyToScan(true);
+      setNotificationText('');
+      setTagText('');
       return () => {
         setIsReadyToScan(false);
         NfcManager.cancelTechnologyRequest();
+        setNotificationText('');
       };
     }, []),
   );
